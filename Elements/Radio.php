@@ -10,7 +10,7 @@ class Radio extends Generic
     protected bool $after = self::DEFAULT_AFTER;
     protected string $spacer = self::DEFAULT_SPACER;
     protected array $options = [];
-    protected $selectedKey = self::DEFAULT_OPTION_KEY;
+    protected $selectedKey = self::DEFAULT_OPTION_VALUE;
 
     public function setOptions(array $options, $selectedKey = self::DEFAULT_OPTION_KEY, string $spacer = self::DEFAULT_SPACER, bool $after = self::DEFAULT_AFTER)
     {
@@ -28,7 +28,7 @@ class Radio extends Generic
         {
             $this->attributes['id'] = $baseId . $count++;
             $this->attributes['value'] = $value;
-            if ($this->selectedKey == $key) {
+            if ($this->selectedKey == $value) {
                 $this->attributes['checked'] = '';
             } elseif (isset($this->attributes['checked'])) {
                 unset($this->attributes['checked']);
