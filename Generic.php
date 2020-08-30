@@ -84,17 +84,10 @@ class Generic
         return $html;
     }
 
-    protected function camelCase(string $string)
-    {
-        $ucw = ucwords($string);
-        $ucw = str_replace(' ', '', $string);
-        $camelcase = strtolower($ucw[0]) . substr($string, 1);
-        return $camelcase;
-    }
-
     protected function getWrapperPattern($element)
     {
-        $type = $this->wrappers[$element]['type'];
+        $type = $this->wrappers[$element]['type'] ?? false;
+        if (!$type) return '%s';
         $wrapper = "<{$type}";
         foreach ($this->wrappers[$element] as $key => $value)
         {
