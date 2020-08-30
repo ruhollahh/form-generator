@@ -12,7 +12,7 @@ class Radio extends Generic
     protected array $options = [];
     protected $selectedKey = self::DEFAULT_OPTION_VALUE;
 
-    public function setOptions(array $options, $selectedKey = self::DEFAULT_OPTION_KEY, string $spacer = self::DEFAULT_SPACER, bool $after = self::DEFAULT_AFTER)
+    public function setOptions(array $options, $selectedKey = self::DEFAULT_OPTION_VALUE, string $spacer = self::DEFAULT_SPACER, bool $after = self::DEFAULT_AFTER)
     {
         $this->options = $options;
         $this->selectedKey = $selectedKey;
