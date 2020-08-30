@@ -24,7 +24,7 @@ class Radio extends Generic
     {
         $count = 1;
         $baseId = $this->attributes['id'];
-        foreach ($this->options as $key => $value)
+        foreach ($this->options as $label => $value)
         {
             $this->attributes['id'] = $baseId . $count++;
             $this->attributes['value'] = $value;
@@ -34,9 +34,9 @@ class Radio extends Generic
                 unset($this->attributes['checked']);
             }
             if ($this->after) {
-                $html = parent::getInputOnly() . $key;
+                $html = parent::getInputOnly() . $label;
             } else {
-                $html = $key . parent::getInputOnly();
+                $html = $label . parent::getInputOnly();
             }
             $output .= $html . $this->spacer;
         }
